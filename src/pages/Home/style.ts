@@ -11,15 +11,6 @@ export const LogoMarvel = styled.img`
 height: 30px;
 `;
 
-const hoverShake = keyframes`
-  to {
-    0% {transform: skew(0deg,0deg);}
-    25% {transform: skew(5deg, 5deg);}
-    75% {transform: skew(-5deg, -5deg);}
-    100% {transform: skew(0deg,0deg);}
-  }
-`
-
 export const SearchContainer = styled.div`
 background: #fff;
 height: 17px;
@@ -31,15 +22,13 @@ position: absolute;
 padding: 10px 30px;
 display: flex;
 align-self: center;
-cursor: pointer;
 transition: 0.8s;
 box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
               -4px -4px 6px 0 rgba(116, 125, 136, .2), 
 inset -4px -4px 6px 0 rgba(255,255,255,.2),
 inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
 &:hover {
-    
-    width: 300px;
+    width: 250px;
     left: 35%;
 }
 `;
