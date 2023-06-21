@@ -4,15 +4,22 @@ import api from '../services/marvel';
 import { MdSearch } from 'react-icons/md';
 import { 
     Header, LogoMarvel, 
-    SearchContainer, SearchInput
+    SearchContainer, SearchInput,
+    SectionList, ListWrapper
 } from './style';
+import ListHero from '../../components/ListHero';
 
 
-interface Data {
-    name: string,
-    id: number,
-    description: string,
-    thumbnail: string
+export interface Data {
+    name: string;
+    id: number;
+    description: string;
+    thumbnail: Img;
+}
+
+export interface Img {
+    path: string;
+    extension: string;
 }
 
 const Home: React.FC = () => {
@@ -42,7 +49,7 @@ const Home: React.FC = () => {
     };
 
     const searchedHero = useMemo(() => {
-        const lowerSearch = text.toLocaleLowerCase(); 
+        const lowerSearch = text.toLocaleLowerCase().trim(); 
         return data.filter(hero => 
             hero.name.toLocaleLowerCase().includes(lowerSearch))
     }, [text, data]); 
@@ -51,7 +58,8 @@ const Home: React.FC = () => {
         <div>
             <Header>
                 <LogoMarvel src={require('../../assets/marvel-logo.png')} />
-                <SearchContainer>
+                <SearchContainer style={{width: text.length > 0 ? 250 : 80, 
+                    left: text.length > 0 ? '35%' : '40%'}}>
                     <MdSearch color='#2E2E2E' size={30} 
                     style={{position: 'absolute', top: 3, left: 3}} />
                     <SearchInput value={text} type='text' name='search' 
@@ -59,15 +67,21 @@ const Home: React.FC = () => {
                 </SearchContainer>
                 
             </Header>
-            {text.length < 0 || text.length == 0 ?
-                data?.map((item) => (
-                    <h1 key={item.id}>{item.name}</h1>
-                ))
-            :
-                searchedHero?.map((item) => (
-                    <h1 key={item.id}>{item.name}</h1>
-                ))
-            }            
+            <SectionList>
+                {text.length < 0 || text.length == 0 ?
+                    <ListWrapper>
+                    {data?.map((item) => (
+                        <ListHero key={item.id} data={item} />
+                    ))}
+                </ListWrapper>
+                :
+                    <ListWrapper>
+                        {searchedHero?.map((item) => (
+                            <ListHero key={item.id} data={item} />
+                        ))}
+                    </ListWrapper>
+                }  
+            </SectionList>          
         </div>
     )
 }

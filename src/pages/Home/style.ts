@@ -8,7 +8,8 @@ padding: 20px 10px;
 `;
 
 export const LogoMarvel = styled.img`
-height: 30px;
+height: 50px;
+padding-right: 20px
 `;
 
 export const SearchContainer = styled.div`
@@ -16,7 +17,7 @@ background: #fff;
 height: 17px;
 width: 70px;
 left: 45%;
-top: 17px;
+top: 27px;
 border-radius: 30px;
 position: absolute;
 padding: 10px 30px;
@@ -27,10 +28,6 @@ box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
               -4px -4px 6px 0 rgba(116, 125, 136, .2), 
 inset -4px -4px 6px 0 rgba(255,255,255,.2),
 inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
-&:hover {
-    width: 250px;
-    left: 35%;
-}
 `;
 
 export const SearchInput = styled.input`
@@ -47,3 +44,15 @@ transition: 0.8s;
 export const SearchBtn = styled.a`
 
 `;
+
+export const SectionList = styled.body`
+padding: 25px;
+`;
+
+export const ListWrapper = styled.div`
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+grid-gap: 10px;
+`;
+
+
