@@ -16,6 +16,7 @@
     "md5": "^2.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.9.0",
     "react-router-dom": "^6.13.0",
     "react-scripts": "5.0.1",
     "styled-components": "^6.0.0-rc.3",
@@ -27,9 +28,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}", 
-    "lint:fix": "eslint --fix ' src/**/*.{js,jsx,ts,tsx,json}'", 
-    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md ,json}' --config ./.prettierrc" 
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
+    "lint:fix": "eslint --fix ' src/**/*.{js,jsx,ts,tsx,json}'",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md ,json}' --config ./.prettierrc"
   },
   "eslintConfig": {
     "extends": [

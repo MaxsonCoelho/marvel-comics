@@ -1,6 +1,12 @@
 import React, {useEffect, useState} from 'react'; 
 import md5 from 'md5';
 import api from '../services/marvel';
+import { MdSearch } from 'react-icons/md';
+import { 
+    Header, LogoMarvel, 
+    SearchContainer, SearchInput, 
+    SearchBtn 
+} from './style';
 
 interface Data {
     name: string,
@@ -8,8 +14,6 @@ interface Data {
     description: string,
     thumbnail: string
 }
-
-
 
 const Home: React.FC = () => {
     const [data, setData] = useState<Data[]>([]);
@@ -34,6 +38,20 @@ const Home: React.FC = () => {
 
     return (
         <div>
+            <Header>
+                <LogoMarvel src={require('../../assets/marvel-logo.png')} />
+                <SearchContainer>
+                    <MdSearch onClick={()=> console.log('foi')} color='#2E2E2E' 
+                        size={30} style={{position: 'absolute', top: 3, left: 3}} />
+                    <SearchInput type='text' name='search' placeholder='Buscar...' />
+                </SearchContainer>
+                {/* <div class="search-container">
+                    <input type="text" name="search" placeholder="Search..." class="search-input">
+                    <a href="#" class="search-btn">
+                            <i class="fas fa-search"></i>      
+                    </a>
+                </div> */}
+            </Header>
             {data?.map((item) => (
                 <h1 key={item.id}>{item.name}</h1>
             ))}
