@@ -21,7 +21,7 @@ const App: React.FC = () => {
       element: <Home />,
     },
     {
-      path: "/details",
+      path: "/details/:id",
       element: <HeroDetails />,
     }
   ]);

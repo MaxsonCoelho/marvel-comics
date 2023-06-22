@@ -8,11 +8,11 @@ import {
     SectionList, ListWrapper
 } from './style';
 import ListHero from '../../components/ListHero';
-
+import { useHero } from '../../context/Hero';
 
 export interface Data {
     name: string;
-    id: number;
+    id: string;
     description: string;
     thumbnail: Img;
 }
@@ -25,7 +25,7 @@ export interface Img {
 const Home: React.FC = () => {
     const [data, setData] = useState<Data[]>([]);
     const [text, setText] = useState<string>('');
-
+    const { changeData } = useHero();
     const public_Key = '1c3ba878bfd6f4cc88c8ba5ef829c2d5';
     const private_Key = '8dc3d290fef6bcf4dccf3588c8219c9ab6d9aeb9';
 
@@ -38,6 +38,7 @@ const Home: React.FC = () => {
             api.get(`/characters?ts=${time}&apikey=${public_Key}&hash=${hash}`)
             .then(r => {
                 setData(r.data.data.results);
+                changeData(r.data.data.results);
                 console.log(r.data.data.results)
             }).catch(e => console.log(e))
         }

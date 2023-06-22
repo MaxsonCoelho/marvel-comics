@@ -13,13 +13,12 @@ export interface Props {
 }
 
 const ListHero = ({ data, ...rest }: Props) => {
-    const IMAGE_SIZE = 'portrait_fantastic'
+    const IMAGE_SIZE = 'portrait_fantastic';
 
-    console.log(data.thumbnail.path)
     return (
         
         <Container {...rest}>
-            <Link style={{textDecoration: 'none'}} to='/details'>
+            <Link style={{textDecoration: 'none'}} to={`/details/${data.id}`}>
                 <ImageHero src={`${data.thumbnail.path}/${IMAGE_SIZE}.${data.thumbnail.extension}`} />
                 <NameHero>{data.name}</NameHero> 
             </Link>
