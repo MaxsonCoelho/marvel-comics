@@ -29,3 +29,7 @@ O typescript e a tipagem das libs foram instaladas e configuradas com sucesso
 
 Neste projeto fiz uso de minhas habilidades de arquitetura de sistemas mobile, consumo de api, animações, clean code e designer de interfaces com experiência do usuário.
 
+# Observações
+
+A api da Marvel está com alguns personagens sem descrição e imagens, por falta de manutenção acredito, mas usei UX para criar mensagens amigáveis onde falta informações. 
+

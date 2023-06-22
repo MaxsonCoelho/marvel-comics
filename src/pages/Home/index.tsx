@@ -59,10 +59,10 @@ const Home: React.FC = () => {
         <div>
             <Header>
                 <LogoMarvel src={require('../../assets/marvel-logo.png')} />
-                <SearchContainer style={{width: text.length > 0 ? 250 : 80, 
+                <SearchContainer style={{width: text.length > 0 ? 190 : 80, 
                     left: text.length > 0 ? '35%' : '40%'}}>
                     <MdSearch color='#2E2E2E' size={30} 
-                    style={{position: 'absolute', top: 3, left: 3}} />
+                    style={{position: 'absolute', top: 8, left: 3}} />
                     <SearchInput value={text} type='text' name='search' 
                     onChange={handleChange} placeholder='Buscar...' />
                 </SearchContainer>

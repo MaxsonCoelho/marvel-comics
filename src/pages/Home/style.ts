@@ -27,10 +27,10 @@ animation: ${shineAnimation} 1.2s ease-in-out infinite;
 
 export const SearchContainer = styled.div`
 background: #fff;
-height: 17px;
+height: 25px;
 width: 70px;
 left: 45%;
-top: 27px;
+top: 22px;
 border-radius: 30px;
 position: absolute;
 padding: 10px 30px;
