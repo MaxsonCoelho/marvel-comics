@@ -1,6 +1,5 @@
 import React, {useEffect, useMemo, useState} from 'react'; 
 import md5 from 'md5';
-import api from '../services/marvel';
 import { MdSearch } from 'react-icons/md';
 import { 
     Header, LogoMarvel, 
@@ -10,6 +9,7 @@ import {
 import ListHero from '../../components/ListHero';
 import { useHero } from '../../context/Hero';
 import LoadMarvel from '../../components/LoadMarvel';
+import api from '../../services/marvel';
 
 export interface Data {
     name: string;
