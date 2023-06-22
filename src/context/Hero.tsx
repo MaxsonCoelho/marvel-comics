@@ -36,7 +36,6 @@ const [data, setData] = useState<Data[]>([]);
 
 function changeData(list: Data[]) {
     setData(list);
-    console.log(data);
 }
 
 return (

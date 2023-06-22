@@ -9,6 +9,7 @@ import {
 } from './style';
 import ListHero from '../../components/ListHero';
 import { useHero } from '../../context/Hero';
+import LoadMarvel from '../../components/LoadMarvel';
 
 export interface Data {
     name: string;
@@ -39,7 +40,6 @@ const Home: React.FC = () => {
             .then(r => {
                 setData(r.data.data.results);
                 changeData(r.data.data.results);
-                console.log(r.data.data.results)
             }).catch(e => console.log(e))
         }
         getApi();
@@ -71,6 +71,9 @@ const Home: React.FC = () => {
             <SectionList>
                 {text.length < 0 || text.length == 0 ?
                     <ListWrapper>
+                    {data.length == 0 && (
+                        <LoadMarvel />
+                    )}
                     {data?.map((item) => (
                         <ListHero key={item.id} data={item} />
                     ))}

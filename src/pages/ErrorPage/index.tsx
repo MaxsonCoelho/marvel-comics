@@ -1,23 +1,20 @@
 import React from "react";
 import { useRouteError } from "react-router-dom";
+import {
+  NotFoundContainer, ErrorMessage,
+  MarvelLogo
+} from './styles';
 
-interface Error {
-    statusText: string;
-    message: string;
-}
 
 const ErrorPage: React.FC = () => {
   const error = useRouteError() as Error;
   console.error(error);
 
   return (
-    <div id="error-page">
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
-        <i>{error.statusText}</i>
-      </p>
-    </div>
+    <NotFoundContainer>
+      <ErrorMessage>404 - Not Found</ErrorMessage>
+      <MarvelLogo src={require("../../assets/marvel-logo.png")} alt="Marvel Logo" />
+    </NotFoundContainer>
   );
 }
 

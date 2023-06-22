@@ -7,9 +7,22 @@ background-color: #2E2E2E;
 padding: 20px 10px;
 `;
 
+const shineAnimation = keyframes`
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+`;
+
 export const LogoMarvel = styled.img`
 height: 50px;
-padding-right: 20px
+padding-right: 20px;
+animation: ${shineAnimation} 1.2s ease-in-out infinite;
 `;
 
 export const SearchContainer = styled.div`
