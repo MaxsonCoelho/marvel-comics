@@ -22,6 +22,9 @@ O typescript e a tipagem das libs foram instaladas e configuradas com sucesso
 
 ### `http://https://gateway.marvel.com/v1/public`
 
+# url do app hospedado na plataforma de deploy vercel
+### `https://marvel-comics-sigma.vercel.app/`
+
 # Minhas palavras sobre o projeto
 
 Neste projeto fiz uso de minhas habilidades de arquitetura de sistemas mobile, consumo de api, animações, clean code e designer de interfaces com experiência do usuário.
